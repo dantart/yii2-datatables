@@ -5,9 +5,9 @@
  * @author Serhiy Vinichuk <serhiyvinichuk@gmail.com>
  */
 
-namespace nullref\datatable;
+namespace dantart\datatable;
 
-use nullref\datatable\assets\DataTableAsset;
+use dantart\datatable\assets\DataTableAsset;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -16,7 +16,7 @@ use yii\helpers\Json;
 
 /**
  * Class DataTable
- * @package nullref\datatable
+ * @package dantart\datatable
  * Features
  * @property bool $autoWidth Feature control DataTables' smart column width handling
  * @property bool $deferRender Feature control deferred rendering for additional speed of initialisation.

@@ -10,18 +10,18 @@ The preferred way to install this extension is through composer.
 Either run
 
 ```
-composer require nullref/yii2-datatables
+composer require dantart/yii2-datatables
 ```
 or add
 ```
-"nullref/yii2-datatables": "~1.0"
+"dantart/yii2-datatables": "~1.0"
 ```
 to the require section of your `composer.json` file.
 
 ## Basic Usage
 
 ```php
-<?= \nullref\datatable\DataTable::widget([
+<?= \dantart\datatable\DataTable::widget([
     'data' => $dataProvider->getModels(),
     'columns' => [
         'id',
@@ -36,7 +36,7 @@ Also you can use all [Datatables options](https://datatables.net/reference/optio
 
 To pass them as widget options:
 ```php
-<?= \nullref\datatable\DataTable::widget([
+<?= \dantart\datatable\DataTable::widget([
     'data' => $dataProvider->getModels(),
     'scrollY' => '200px',
     'scrollCollapse' => true,
@@ -52,7 +52,7 @@ To pass them as widget options:
 ## Specifies header label and css class for cell
 
 ```php
-    <?= \nullref\datatable\DataTable::widget([
+    <?= \dantart\datatable\DataTable::widget([
         'columns' => [
             //other columns
             [
@@ -67,11 +67,11 @@ To pass them as widget options:
 ## Add Links to row
 
 ```php
-    <?= \nullref\datatable\DataTable::widget([
+    <?= \dantart\datatable\DataTable::widget([
         'columns' => [
             //other columns
             [
-                'class' => 'nullref\datatable\LinkColumn',
+                'class' => 'dantart\datatable\LinkColumn',
                 'url' => ['/model/delete'],
                 'linkOptions' => ['data-confirm' => 'Are you sure you want to delete this item?', 'data-method' => 'post'],
                 'label' => 'Delete',
@@ -93,7 +93,7 @@ Properties of `LinkColumn`:
     'columns' => [
         //...
         [
-            'class' => 'nullref\datatable\LinkColumn',
+            'class' => 'dantart\datatable\LinkColumn',
             'queryParams' => ['some_id'],
             'render' => new JsExpression('function render(data, type, row, meta ){
                 return "<a href=\"/custom/url/"+row["some_id"]+"\">View</a>"
@@ -115,7 +115,7 @@ You ca add column filtering functionality by setting option `withColumnFilter` t
 - It can be avoided by setting `filter` to false
 
 ```php
-    <?= \nullref\datatable\DataTable::widget([
+    <?= \dantart\datatable\DataTable::widget([
         'columns' => [
             'id',
             //...
@@ -140,14 +140,14 @@ No filter will be generated for `last_connection` attrribute.
 
 ## Advanced column definition
 
-Cell rendering or filter can be customized using `\nullref\datatable\DataTableColumn` class.
+Cell rendering or filter can be customized using `\dantart\datatable\DataTableColumn` class.
 
 ```php
-    <?= \nullref\datatable\DataTable::widget([
+    <?= \dantart\datatable\DataTable::widget([
         'columns' => [
             //other columns
             [
-                'class' => 'nullref\datatable\DataTableColumn', // can be omitted
+                'class' => 'dantart\datatable\DataTableColumn', // can be omitted
                 'data' => 'active',
                 'renderFiler' => new \yii\web\JsExpression('function() { ' .
                     'return jQuery(\'<input type="checkbox" value="true"/> Active only\'); ' .
@@ -168,8 +168,8 @@ Cell rendering or filter can be customized using `\nullref\datatable\DataTableCo
 ```php
 'assetManager' => [
     'bundles' => [
-        'nullref\datatable\assets\DataTableAsset' => [
-            'styling' => \nullref\datatable\assets\DataTableAsset::STYLING_BOOTSTRAP,
+        'dantart\datatable\assets\DataTableAsset' => [
+            'styling' => \dantart\datatable\assets\DataTableAsset::STYLING_BOOTSTRAP,
         ]
     ],
 ],
@@ -180,7 +180,7 @@ Cell rendering or filter can be customized using `\nullref\datatable\DataTableCo
 Bootstrap tables require the class 'table', so you'll need to add the 'table' class using `tableOptions` via the widget config.
 
 ```php
-<?= \nullref\datatable\DataTable::widget([
+<?= \dantart\datatable\DataTable::widget([
     'data' => $dataProvider->getModels(),
     'tableOptions' => [
         'class' => 'table',
@@ -196,7 +196,7 @@ Bootstrap tables require the class 'table', so you'll need to add the 'table' cl
 ## Custom assets
 It's possible to use custom styles and scripts:
 ```php
-'nullref\datatable\assets\DataTableAsset' => [
+'dantart\datatable\assets\DataTableAsset' => [
     'sourcePath' => '@webroot/js/plugin/datatables/',
     'js' => [
         'jquery.dataTables-1.10-cust.js',
@@ -220,7 +220,7 @@ To enable server-side processing add `DataTableAction` to controller like this:
      {
          return [
              'datatables' => [
-                 'class' => 'nullref\datatable\DataTableAction',
+                 'class' => 'dantart\datatable\DataTableAction',
                  'query' => Model::find(),
              ],
          ];
@@ -235,7 +235,7 @@ public function actions()
 {
     return [
          'datatables' => [
-             'class' => 'nullref\datatable\DataTableAction',
+             'class' => 'dantart\datatable\DataTableAction',
              'query' => Model::find(),
              'applyOrder' => function($query, $columns, $order) {
                 //custom ordering logic
@@ -268,7 +268,7 @@ If you need to get some relation data you can call `join` or similar methods fro
 And add options to widget: 
 
 ```php
-    <?= \nullref\datatable\DataTable::widget([
+    <?= \dantart\datatable\DataTable::widget([
         /** ... */
         'serverSide' => true,
         'ajax' => '/site/datatables',

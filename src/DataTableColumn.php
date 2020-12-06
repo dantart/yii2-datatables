@@ -5,7 +5,7 @@
  * @author Herve Guenot <hguenot@gmail.com>
  */
 
-namespace nullref\datatable;
+namespace dantart\datatable;
 
 use yii\base\InvalidConfigException;
 use yii\base\Widget;

@@ -5,7 +5,7 @@
  * @author Serhiy Vinichuk <serhiyvinichuk@gmail.com>
  */
 
-namespace nullref\datatable;
+namespace dantart\datatable;
 
 use yii\helpers\Html;
 use yii\helpers\Json;

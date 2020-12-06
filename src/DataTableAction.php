@@ -5,7 +5,7 @@
  * @author Serhiy Vinichuk <serhiyvinichuk@gmail.com>
  */
 
-namespace nullref\datatable;
+namespace dantart\datatable;
 
 
 use Yii;
@@ -20,7 +20,7 @@ use yii\web\Response;
 /**
  * Action for processing ajax requests from DataTables.
  * @see http://datatables.net/manual/server-side for more info
- * @package nullref\datatable
+ * @package dantart\datatable
  */
 class DataTableAction extends Action
 {
@@ -31,7 +31,7 @@ class DataTableAction extends Action
     const REQUEST_METHOD_POST = 'POST';
 
     /**
-     * @see \nullref\datatable\DataTableAction::getParam
+     * @see \dantart\datatable\DataTableAction::getParam
      * @var string
      */
     public $requestMethod = self::REQUEST_METHOD_GET;

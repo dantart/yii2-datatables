@@ -5,7 +5,7 @@
  * @author Serhiy Vinichuk <serhiyvinichuk@gmail.com>
  */
 
-namespace nullref\datatable\assets;
+namespace dantart\datatable\assets;
 
 
 use yii\web\AssetBundle;
